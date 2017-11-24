@@ -29,38 +29,117 @@ void Canvas::Init(int width, int height)
     }
     _width = width;
     _height = height;
-    PositionRow = 10;
-    PositionCol = 10;
+    PositionRow1 = 10;
+    PositionCol1 = 10;
+    PositionRow2 = 11;
+    PositionCol2 = 10;
+    PositionRow3 = 12;
+    PositionCol3 = 10;
 }
 
-void Canvas::UpSnake()
+void Canvas::UpSnakeHead()
 {
-    _buffer[PositionRow][PositionCol] = ' ';
-    PositionRow -= 1;
-    _buffer[PositionRow][PositionCol] = '*';
-//  cout << PositionRow << " " << PositionCol << endl;
+    _buffer[PositionRow1][PositionCol1] = ' ';
+    PositionRow1 -= 1;
+    _buffer[PositionRow1][PositionCol1] = '1';
 }
 
-void Canvas::DownSnake()
+void Canvas::UpSnakeBody()
 {
-    _buffer[PositionRow][PositionCol] = ' ';
-    PositionRow += 1;
-    _buffer[PositionRow][PositionCol] = '*';
+    _buffer[PositionRow2][PositionCol2] = ' ';
+    PositionRow2 -= 1;
+    _buffer[PositionRow2][PositionCol2] = '2';
+//    _buffer[PositionRow3][PositionCol3] = ' ';
+//    PositionRow3 -= 1;
+//    _buffer[PositionRow3][PositionCol3] = '3';
 }
 
-void Canvas::LeftSnake()
+void Canvas::DownSnakeHead()
 {
-    _buffer[PositionRow][PositionCol] = ' ';
-    PositionCol -= 1;
-    _buffer[PositionRow][PositionCol] = '*';
+    _buffer[PositionRow1][PositionCol1] = ' ';
+    PositionRow1 += 1;
+    _buffer[PositionRow1][PositionCol1] = '1';
 }
 
-void Canvas::RightSnake()
+void Canvas::DownSnakeBody()
 {
-    _buffer[PositionRow][PositionCol] = ' ';
-    PositionCol += 1;
-    _buffer[PositionRow][PositionCol] = '*';
+    _buffer[PositionRow2][PositionCol2] = ' ';
+    PositionRow2 += 1;
+    _buffer[PositionRow2][PositionCol2] = '2';
+//    _buffer[PositionRow3][PositionCol3] = ' ';
+//    PositionRow3 += 1;
+//    _buffer[PositionRow3][PositionCol3] = '3';
 }
+
+void Canvas::LeftSnakeHead()
+{
+    _buffer[PositionRow1][PositionCol1] = ' ';
+    PositionCol1 -= 1;
+    _buffer[PositionRow1][PositionCol1] = '1';
+}
+void Canvas::LeftSnakeBody()
+{
+    _buffer[PositionRow2][PositionCol2] = ' ';
+    PositionCol2 -= 1;
+    _buffer[PositionRow2][PositionCol2] = '2';
+//    _buffer[PositionRow3][PositionCol3] = ' ';
+//    PositionCol3 -= 1;
+//    _buffer[PositionRow3][PositionCol3] = '3';
+}
+
+void Canvas::RightSnakeHead()
+{
+    _buffer[PositionRow1][PositionCol1] = ' ';
+    PositionCol1 += 1;
+    _buffer[PositionRow1][PositionCol1] = '1';
+}
+void Canvas::RightSnakeBody()
+{
+    _buffer[PositionRow2][PositionCol2] = ' ';
+    PositionCol2 += 1;
+    _buffer[PositionRow2][PositionCol2] = '2';
+//    _buffer[PositionRow3][PositionCol3] = ' ';
+//    PositionCol3 += 1;
+//    _buffer[PositionRow3][PositionCol3] = '3';
+}
+
+//void MoveSnakeBody(char Bodydirection)
+//{
+//    switch (Bodydirection) {
+//    case 'w':
+//        canvas.UpSnakeBody();
+//        break;
+//    case 's':
+//        canvas.DownSnakeBody();
+//        break;
+//    case 'a':
+//        canvas.LeftSnakeBody();
+//        break;
+//    case 'd':
+//        canvas.RightSnakeBody();
+//        break;
+//    }
+
+//}
+
+//void Canvas::MoveSnake(char directionNow, char directionLast)
+//{
+//    switch (directionNow) {
+//    case 'w':
+//        canvas.UpSnakeHead();
+//        break;
+//    case 's':
+//        canvas.DownSnakeHead();
+//        break;
+//    case 'a':
+//        canvas.LeftSnakeHead();
+//        break;
+//    case 'd':
+//        canvas.RightSnakeHead();
+//        break;
+//    }
+//    MoveSnakeBody(directionLast);
+//}
 
 void Canvas::Output() const
 {

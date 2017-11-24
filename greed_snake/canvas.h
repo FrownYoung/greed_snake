@@ -6,14 +6,23 @@ public:
     Canvas(int width, int height); // constructor
     ~Canvas();	// destructor
 
-    void UpSnake();
-    void DownSnake();
-    void LeftSnake();
-    void RightSnake();
+    void MoveSnake(char directionNow, char directionLast);
+    void UpSnakeHead();
+    void DownSnakeHead();
+    void LeftSnakeHead();
+    void RightSnakeHead();
+    void UpSnakeBody();
+    void DownSnakeBody();
+    void LeftSnakeBody();
+    void RightSnakeBody();
     //void DrawRectangle(int left, int top, int width, int height);
     void Output() const;
-    int PositionRow;
-    int PositionCol;
+    int PositionRow1;
+    int PositionCol1;
+    int PositionRow2;
+    int PositionCol2;
+    int PositionRow3;
+    int PositionCol3;
 
 private:
     void Init(int width, int height);
